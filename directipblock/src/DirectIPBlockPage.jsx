@@ -65,7 +65,7 @@ export default function DirectIPBlockPage() {
       <footer className="bg-white border-t border-gray-200 py-6">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-xs text-gray-500">
-            © 2025 Ghost143 All rights reserved.
+            © 2026 Ghost143 All rights reserved.
           </p>
         </div>
       </footer>
