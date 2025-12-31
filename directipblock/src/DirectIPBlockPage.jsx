@@ -1,24 +1,7 @@
 import React from 'react';
-import { AlertCircle } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
-export default function ServiceDownPage() {
-  const [countdown, setCountdown] = React.useState(30);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          window.location.reload();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
+export default function DirectIPBlockPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col">
       <main className="flex-1 flex items-center justify-center px-4 py-12">
@@ -26,7 +9,7 @@ export default function ServiceDownPage() {
           <div className="flex justify-center mb-8">
             <div className="relative">
               <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center">
-                <AlertCircle className="w-12 h-12 text-red-500" />
+                <Shield className="w-12 h-12 text-red-500" />
               </div>
               <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full border-4 border-white"></div>
             </div>
@@ -34,10 +17,10 @@ export default function ServiceDownPage() {
 
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Service is down!
+              Direct IP Access Denied
             </h1>
             <p className="text-lg text-gray-600">
-              We've detected that the service you're trying to reach is currently down.
+              Access via direct IP address is not permitted for security reasons.
             </p>
           </div>
 
@@ -47,41 +30,33 @@ export default function ServiceDownPage() {
                 <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
                 <div>
                   <p className="text-sm font-semibold text-gray-700">Status</p>
-                  <p className="text-sm text-gray-600">Service Unavailable</p>
+                  <p className="text-sm text-gray-600">Access Forbidden</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                 <div>
                   <p className="text-sm font-semibold text-gray-700">Error Code</p>
-                  <p className="text-sm text-gray-600">503</p>
+                  <p className="text-sm text-gray-600">403</p>
                 </div>
               </div>
             </div>
             
             <div className="border-t border-gray-200 pt-4 mt-4">
-              <p className="text-xs text-gray-500 mb-2">
-                This page will automatically refresh in:
+              <p className="text-sm text-gray-700 mb-2">
+                <span className="font-semibold">Reason:</span> Direct IP access is blocked
               </p>
-              <div className="flex items-center space-x-2">
-                <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div 
-                    className="bg-red-500 h-full transition-all duration-1000 ease-linear"
-                    style={{ width: `${(countdown / 30) * 100}%` }}
-                  ></div>
-                </div>
-                <span className="text-sm font-mono text-gray-700 w-12 text-right">
-                  {countdown}s
-                </span>
-              </div>
+              <p className="text-xs text-gray-500">
+                This website must be accessed through its proper domain name.
+              </p>
             </div>
           </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <h3 className="text-sm font-semibold text-blue-900 mb-2">What can you do?</h3>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Wait a few minutes and refresh this page</li>
-              <li>• Contact the Owner of this Site</li>
+              <li>• Use the proper domain name instead of the IP address</li>
+              <li>• If you accessed this page via the domain, contact the website administrator.</li>
             </ul>
           </div>
         </div>
