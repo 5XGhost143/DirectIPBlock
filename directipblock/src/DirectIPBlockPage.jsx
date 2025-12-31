@@ -47,7 +47,7 @@ export default function DirectIPBlockPage() {
                 <span className="font-semibold">Reason:</span> Direct IP access is blocked
               </p>
               <p className="text-xs text-gray-500">
-                This website must be accessed through its proper domain name.
+                This website must be accessed through its proper domain.
               </p>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function DirectIPBlockPage() {
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <h3 className="text-sm font-semibold text-blue-900 mb-2">What can you do?</h3>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Use the proper domain name instead of the IP address</li>
+              <li>• Use the proper domain instead of the IP address</li>
               <li>• If you accessed this page via the domain, contact the website administrator.</li>
             </ul>
           </div>
